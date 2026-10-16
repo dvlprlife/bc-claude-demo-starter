@@ -36,7 +36,7 @@ Optional items:
 - **Automated tests.** The sandbox needs the Microsoft test framework apps (Test Runner, Any, Library Assert). If they are not installed, Claude tells you and continues without the tests.
 - **Progress dashboard.** It is a page on claude.ai. Claude offers it only when your Claude Code session can publish artifacts.
 
-Claude checks the prerequisites for you. If an item is missing, Claude tells you how to install it.
+Claude checks the prerequisites for you. If the .NET SDK or the AL tools are missing, Claude offers to install them. Claude installs them only when you agree. Windows can show an administrator prompt for the .NET SDK. Approve it. You install Claude Code and Microsoft Edge yourself.
 
 Find these values before you start:
 

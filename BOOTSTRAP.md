@@ -22,16 +22,22 @@ Run in PowerShell:
 powershell -NoProfile -ExecutionPolicy Bypass -File "<kit>\New-BCDemoProject.ps1" -CheckOnly
 ```
 
-For each item marked `MISSING`, tell the user how to fix it:
+If an item is marked `MISSING`, list the missing items and offer to install them. Ask one question for all of them, for example: "The .NET 8 SDK and the AL tools are missing. Do you want me to install them now?" Install only when the user agrees.
 
-| Item | Fix |
-|------|-----|
-| .NET SDK (dotnet) | Install the .NET 8 SDK: `winget install Microsoft.DotNet.SDK.8`. Then restart the terminal and Claude Code. |
-| AL tools (al) | `dotnet tool install --global Microsoft.Dynamics.BusinessCentral.Development.Tools`. Then restart the terminal and Claude Code. |
+| Item | Install command |
+|------|-----------------|
+| .NET SDK (dotnet) | `winget install --id Microsoft.DotNet.SDK.8 --exact --accept-package-agreements --accept-source-agreements` |
+| AL tools (al) | `dotnet tool install --global Microsoft.Dynamics.BusinessCentral.Development.Tools` |
 | AL tools version 18 or later | `dotnet tool update --global Microsoft.Dynamics.BusinessCentral.Development.Tools` |
-| Microsoft Edge | Install Microsoft Edge. Only the wireframe images need it. |
+| Microsoft Edge | Do not install it. Tell the user to install Microsoft Edge. Only the wireframe images need it. |
 
-You can run the `dotnet tool` command for the user when they agree. Do not install the .NET SDK or Edge yourself. Ask the user to do it. Continue with Step 3 when only Edge is missing.
+Install in this order:
+
+1. **.NET SDK.** Tell the user that Windows can show an administrator prompt, and that they must approve it. If `winget` is not available, give the user the download page, <https://dotnet.microsoft.com/download/dotnet/8.0>, and stop until they install it.
+2. **AL tools.** A new install of .NET is not on the PATH of this session. Use the full path for the `dotnet` command: `& "$env:ProgramFiles\dotnet\dotnet.exe" tool install --global Microsoft.Dynamics.BusinessCentral.Development.Tools`.
+3. Run the check again. A new install of the AL tools is also not on the PATH of this session, so the check can show `MISSING` for them. If the install command succeeded, continue. The restart in Step 5 loads the new PATH.
+
+If the user does not want the installs, give them the commands from the table and continue with Step 3. The project is created, but the build and publish steps need the tools. Continue with Step 3 when only Edge is missing.
 
 ## 3. Collect the project values
 

@@ -1,0 +1,8 @@
+* text=auto
+*.ps1 text eol=crlf
+*.png binary
+
+# Files that the release zip does not need
+.gitignore export-ignore
+.gitattributes export-ignore
+RELEASING.md export-ignore

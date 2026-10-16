@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__al",
+      "Bash(al --version)",
+      "Bash(al launchmcpserver *)"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "al"
+  ]
+}

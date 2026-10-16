@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="470" font-family="Segoe UI, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="1060" height="470" fill="#fff"/>
+
+  <!-- ============ BC HEADER BAR ============ -->
+  <rect width="1060" height="40" fill="#1a3050"/>
+  <text x="44" y="26" fill="#fff" font-size="14" font-weight="600">Dynamics 365 Business Central</text>
+  <text x="780" y="26" fill="#6fa0c2" font-size="11">Environment: dev</text>
+  <circle cx="940" cy="20" r="14" fill="#0078d4" opacity="0.9"/>
+  <text x="933" y="24" fill="#fff" font-size="10" font-weight="700">PA</text>
+  <text x="975" y="27" fill="#7d8c9c" font-size="17">⚙</text>
+  <text x="1008" y="27" fill="#7d8c9c" font-size="17">?</text>
+
+  <!-- ============ COMPANY BAR ============ -->
+  <rect y="40" width="1060" height="36" fill="#fff"/>
+  <line x1="0" y1="76" x2="1060" y2="76" stroke="#e1dfdd"/>
+  <text x="20" y="64" fill="#323130" font-size="14" font-weight="700">CRONUS USA, Inc.</text>
+  <text x="168" y="64" fill="#c8c6c4" font-size="14">|</text>
+  <text x="186" y="64" fill="#0078d4" font-size="13">Finance ▾</text>
+  <text x="256" y="64" fill="#0078d4" font-size="13">Cash Management ▾</text>
+  <text x="400" y="64" fill="#0078d4" font-size="13">Sales ▾</text>
+  <text x="450" y="64" fill="#0078d4" font-size="13">Purchasing ▾</text>
+
+  <!-- ============ PAGE TITLE &amp; ACTION BAR ============ -->
+  <rect y="76" width="1060" height="36" fill="#faf9f8"/>
+  <line x1="0" y1="112" x2="1060" y2="112" stroke="#edebe9"/>
+  <text x="20" y="100" fill="#323130" font-size="15" font-weight="600">Customer 10000 - Adatum Corporation</text>
+  <!-- Actions with Support Contracts highlighted -->
+  <line x1="380" y1="82" x2="380" y2="108" stroke="#e1dfdd"/>
+  <text x="396" y="100" fill="#323130" font-size="13">Home ▾</text>
+  <text x="458" y="100" fill="#323130" font-size="13">Actions ▾</text>
+  <text x="540" y="100" fill="#323130" font-size="13">Navigate ▾</text>
+  <!-- Highlighted: Support Contracts action -->
+  <rect x="618" y="82" width="138" height="26" rx="3" fill="#0078d4" opacity="0.1" stroke="#0078d4" stroke-width="1.5"/>
+  <text x="630" y="100" fill="#0078d4" font-size="13" font-weight="600">Support Contracts</text>
+  <text x="778" y="100" fill="#323130" font-size="13">Report ▾</text>
+
+  <!-- ============ FASTTAB: GENERAL ============ -->
+  <rect x="0" y="116" width="1060" height="28" fill="#f3f2f1"/>
+  <line x1="0" y1="144" x2="1060" y2="144" stroke="#edebe9"/>
+  <text x="20" y="135" fill="#323130" font-size="13" font-weight="600">▾  General</text>
+
+  <!-- Row 1: No. | Name -->
+  <text x="30" y="168" fill="#605e5c" font-size="12">No.</text>
+  <rect x="150" y="153" width="120" height="22" rx="3" fill="#faf9f8" stroke="#edebe9" stroke-width="0.7"/>
+  <text x="158" y="169" fill="#605e5c" font-size="12.5">10000</text>
+
+  <text x="470" y="168" fill="#605e5c" font-size="12">Name</text>
+  <rect x="550" y="153" width="260" height="22" rx="3" fill="#faf9f8" stroke="#edebe9" stroke-width="0.7"/>
+  <text x="558" y="169" fill="#605e5c" font-size="12.5">Adatum Corporation</text>
+
+  <!-- Row 2: Address | Contact -->
+  <text x="30" y="198" fill="#605e5c" font-size="12">Address</text>
+  <rect x="150" y="183" width="200" height="22" rx="3" fill="#fff" stroke="#c8c6c4" stroke-width="0.7"/>
+  <text x="158" y="199" fill="#323130" font-size="12.5">192 Market Square</text>
+
+  <text x="470" y="198" fill="#605e5c" font-size="12">Contact</text>
+  <rect x="550" y="183" width="200" height="22" rx="3" fill="#fff" stroke="#c8c6c4" stroke-width="0.7"/>
+  <text x="558" y="199" fill="#323130" font-size="12.5">Robert Townes</text>
+
+  <!-- Row 3: City | Phone -->
+  <text x="30" y="228" fill="#605e5c" font-size="12">City</text>
+  <rect x="150" y="213" width="160" height="22" rx="3" fill="#fff" stroke="#c8c6c4" stroke-width="0.7"/>
+  <text x="158" y="229" fill="#323130" font-size="12.5">Atlanta</text>
+
+  <text x="470" y="228" fill="#605e5c" font-size="12">Phone No.</text>
+  <rect x="550" y="213" width="160" height="22" rx="3" fill="#fff" stroke="#c8c6c4" stroke-width="0.7"/>
+  <text x="558" y="229" fill="#323130" font-size="12.5">(555) 100-0001</text>
+
+  <!-- Remaining FastTab area (abbreviated) -->
+  <rect x="0" y="252" width="1060" height="28" fill="#f3f2f1"/>
+  <line x1="0" y1="280" x2="1060" y2="280" stroke="#edebe9"/>
+  <text x="20" y="271" fill="#323130" font-size="13" font-weight="600">▸  Invoicing</text>
+
+  <rect x="0" y="284" width="1060" height="28" fill="#f3f2f1"/>
+  <line x1="0" y1="312" x2="1060" y2="312" stroke="#edebe9"/>
+  <text x="20" y="303" fill="#323130" font-size="13" font-weight="600">▸  Payments</text>
+
+  <!-- ============ CALLOUT MARKERS ============ -->
+  <!-- 1: Support Contracts action button -->
+  <circle cx="770" cy="82" r="11" fill="#d13438"/>
+  <text x="770" y="86" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">1</text>
+
+  <!-- 2: Customer context (No. field) -->
+  <circle cx="284" cy="159" r="11" fill="#d13438"/>
+  <text x="284" y="163" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">2</text>
+
+  <!-- ============ NOTES SECTION ============ -->
+  <rect x="0" y="330" width="1060" height="140" fill="#faf9f8"/>
+  <line x1="16" y1="330" x2="1044" y2="330" stroke="#d2d0ce" stroke-width="1"/>
+  <text x="24" y="354" fill="#323130" font-size="13" font-weight="700">Notes</text>
+
+  <!-- Note 1 -->
+  <circle cx="32" cy="380" r="9" fill="#d13438"/>
+  <text x="32" y="384" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">1</text>
+  <text x="50" y="384" fill="#605e5c" font-size="11.5">"Support Contracts" action on the Customer Card opens the contract list filtered for this customer — REQ-13, US-7.2</text>
+
+  <!-- Note 2 -->
+  <circle cx="32" cy="404" r="9" fill="#d13438"/>
+  <text x="32" y="408" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">2</text>
+  <text x="50" y="408" fill="#605e5c" font-size="11.5">Customer context is preserved: clicking "Support Contracts" passes Customer No. as a filter — OBJ-2, REQ-11</text>
+</svg>

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="570" font-family="Segoe UI, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="1060" height="570" fill="#fff"/>
+
+  <!-- ============ BC HEADER BAR ============ -->
+  <rect width="1060" height="40" fill="#1a3050"/>
+  <text x="44" y="26" fill="#fff" font-size="14" font-weight="600">Dynamics 365 Business Central</text>
+  <text x="780" y="26" fill="#6fa0c2" font-size="11">Environment: dev</text>
+  <circle cx="940" cy="20" r="14" fill="#0078d4" opacity="0.9"/>
+  <text x="933" y="24" fill="#fff" font-size="10" font-weight="700">PA</text>
+  <text x="975" y="27" fill="#7d8c9c" font-size="17">⚙</text>
+  <text x="1008" y="27" fill="#7d8c9c" font-size="17">?</text>
+
+  <!-- ============ COMPANY BAR ============ -->
+  <rect y="40" width="1060" height="36" fill="#fff"/>
+  <line x1="0" y1="76" x2="1060" y2="76" stroke="#e1dfdd"/>
+  <text x="20" y="64" fill="#323130" font-size="14" font-weight="700">CRONUS USA, Inc.</text>
+  <text x="168" y="64" fill="#c8c6c4" font-size="14">|</text>
+  <text x="186" y="64" fill="#0078d4" font-size="13">Finance ▾</text>
+  <text x="256" y="64" fill="#0078d4" font-size="13">Cash Management ▾</text>
+  <text x="400" y="64" fill="#0078d4" font-size="13">Sales ▾</text>
+  <text x="450" y="64" fill="#0078d4" font-size="13">Purchasing ▾</text>
+
+  <!-- ============ PAGE TITLE &amp; ACTION BAR (List Page - dimmed) ============ -->
+  <rect y="76" width="1060" height="36" fill="#faf9f8"/>
+  <line x1="0" y1="112" x2="1060" y2="112" stroke="#edebe9"/>
+  <text x="20" y="100" fill="#323130" font-size="15" font-weight="600">Support Contracts:</text>
+  <text x="173" y="100" fill="#0078d4" font-size="14">All ▾</text>
+  <line x1="215" y1="82" x2="215" y2="108" stroke="#e1dfdd"/>
+  <text x="322" y="100" fill="#323130" font-size="13">+ New</text>
+  <text x="378" y="100" fill="#323130" font-size="13">Delete</text>
+  <text x="432" y="100" fill="#323130" font-size="13">Home ▾</text>
+  <text x="497" y="100" fill="#323130" font-size="13" font-weight="600">Renew All Eligible</text>
+
+  <!-- Column Headers (List page beneath dialog) -->
+  <rect y="112" width="1060" height="30" fill="#faf9f8"/>
+  <line x1="0" y1="142" x2="1060" y2="142" stroke="#edebe9"/>
+  <text x="20" y="131" fill="#605e5c" font-size="11.5" font-weight="600">No.</text>
+  <text x="105" y="131" fill="#605e5c" font-size="11.5" font-weight="600">Customer Name</text>
+  <text x="295" y="131" fill="#605e5c" font-size="11.5" font-weight="600">Service Level</text>
+  <text x="415" y="131" fill="#605e5c" font-size="11.5" font-weight="600">Status</text>
+  <text x="500" y="131" fill="#605e5c" font-size="11.5" font-weight="600">Start Date</text>
+  <text x="600" y="131" fill="#605e5c" font-size="11.5" font-weight="600">End Date</text>
+  <text x="700" y="131" fill="#605e5c" font-size="11.5" font-weight="600">Auto-Renew</text>
+
+  <!-- Partial data rows -->
+  <rect y="142" width="1060" height="34" fill="#fff"/>
+  <text x="20" y="164" fill="#0078d4" font-size="12.5">SC-0001</text>
+  <text x="105" y="164" fill="#323130" font-size="12.5">Adatum Corporation</text>
+  <text x="295" y="164" fill="#323130" font-size="12.5">Full Service</text>
+  <text x="415" y="164" fill="#323130" font-size="12.5">Active</text>
+  <text x="500" y="164" fill="#323130" font-size="12.5">01/01/2026</text>
+  <text x="600" y="164" fill="#323130" font-size="12.5">12/31/2026</text>
+  <text x="700" y="164" fill="#323130" font-size="12.5">Yes</text>
+
+  <rect y="176" width="1060" height="34" fill="#fff"/>
+  <line x1="0" y1="176" x2="1060" y2="176" stroke="#f3f2f1"/>
+  <text x="20" y="198" fill="#0078d4" font-size="12.5">SC-0002</text>
+  <text x="105" y="198" fill="#323130" font-size="12.5">Trey Research</text>
+  <text x="295" y="198" fill="#323130" font-size="12.5">Standard</text>
+  <text x="415" y="198" fill="#323130" font-size="12.5">Active</text>
+  <text x="500" y="198" fill="#323130" font-size="12.5">03/01/2026</text>
+  <text x="600" y="198" fill="#323130" font-size="12.5">02/28/2027</text>
+  <text x="700" y="198" fill="#323130" font-size="12.5">No</text>
+  <line x1="0" y1="210" x2="1060" y2="210" stroke="#f3f2f1"/>
+
+  <!-- ============ OVERLAY: Semi-transparent backdrop ============ -->
+  <rect x="0" y="76" width="1060" height="170" fill="#000" opacity="0.18"/>
+
+  <!-- ============ CONFIRMATION DIALOG ============ -->
+  <!-- Drop shadow -->
+  <rect x="282" y="97" width="500" height="162" rx="6" fill="#000" opacity="0.1"/>
+  <!-- Dialog box -->
+  <rect x="278" y="93" width="500" height="162" rx="6" fill="#fff" stroke="#c8c6c4" stroke-width="1"/>
+  <!-- Dialog header -->
+  <rect x="278" y="93" width="500" height="36" rx="6" fill="#f3f2f1"/>
+  <rect x="278" y="117" width="500" height="12" fill="#f3f2f1"/>
+  <line x1="278" y1="129" x2="778" y2="129" stroke="#edebe9"/>
+  <text x="298" y="116" fill="#323130" font-size="13" font-weight="600">Confirm Batch Renewal</text>
+  <!-- Close X -->
+  <text x="754" y="116" fill="#605e5c" font-size="14">✕</text>
+
+  <!-- Dialog body -->
+  <text x="298" y="156" fill="#323130" font-size="13">3 contracts are eligible for renewal.</text>
+  <text x="298" y="176" fill="#323130" font-size="13">Create renewal invoices for all eligible contracts?</text>
+
+  <!-- Buttons -->
+  <rect x="558" y="210" width="90" height="30" rx="3" fill="#0078d4"/>
+  <text x="586" y="230" fill="#fff" font-size="12.5" font-weight="600">Yes</text>
+  <rect x="660" y="210" width="90" height="30" rx="3" fill="#fff" stroke="#8a8886" stroke-width="1"/>
+  <text x="690" y="230" fill="#323130" font-size="12.5">No</text>
+
+  <!-- ============ RESULT MESSAGE (below dialog, showing what happens after) ============ -->
+  <rect x="145" y="268" width="770" height="42" rx="5" fill="#dff6dd" stroke="#107c10" stroke-width="1"/>
+  <text x="170" y="283" fill="#107c10" font-size="13" font-weight="600">✓  Renewal Complete</text>
+  <text x="170" y="301" fill="#107c10" font-size="12">3 renewal invoices created successfully. 0 contracts skipped.</text>
+
+  <!-- ============ CALLOUT MARKERS ============ -->
+  <!-- 1: Confirmation dialog with count -->
+  <circle cx="283" cy="140" r="11" fill="#d13438"/>
+  <text x="283" y="144" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">1</text>
+
+  <!-- 2: Yes / No buttons (draft invoice) -->
+  <circle cx="545" cy="220" r="11" fill="#d13438"/>
+  <text x="545" y="224" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">2</text>
+
+  <!-- 3: Success / summary message -->
+  <circle cx="132" cy="284" r="11" fill="#d13438"/>
+  <text x="132" y="288" fill="#fff" font-size="11" font-weight="700" text-anchor="middle">3</text>
+
+  <!-- ============ NOTES SECTION ============ -->
+  <rect x="0" y="330" width="1060" height="240" fill="#faf9f8"/>
+  <line x1="16" y1="330" x2="1044" y2="330" stroke="#d2d0ce" stroke-width="1"/>
+  <text x="24" y="354" fill="#323130" font-size="13" font-weight="700">Notes</text>
+
+  <!-- Note 1 -->
+  <circle cx="32" cy="380" r="9" fill="#d13438"/>
+  <text x="32" y="384" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">1</text>
+  <text x="50" y="384" fill="#605e5c" font-size="11.5">Confirmation shows count of eligible contracts before any invoices are created — US-6.2, R-7</text>
+
+  <!-- Note 2 -->
+  <circle cx="32" cy="404" r="9" fill="#d13438"/>
+  <text x="32" y="408" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">2</text>
+  <text x="50" y="408" fill="#605e5c" font-size="11.5">Invoices are created as drafts (not posted) — user reviews and posts via standard BC process — REQ-9, US-6.3</text>
+
+  <!-- Note 3 -->
+  <circle cx="32" cy="428" r="9" fill="#d13438"/>
+  <text x="32" y="432" fill="#fff" font-size="9" font-weight="700" text-anchor="middle">3</text>
+  <text x="50" y="432" fill="#605e5c" font-size="11.5">Summary reports successes and errors; individual errors do not block other renewals — US-6.2, EC-6.7</text>
+
+  <!-- Additional context notes -->
+  <text x="50" y="464" fill="#a19f9d" font-size="11">After confirmation, each qualifying contract's Start/End dates are advanced by 1 year and the Last Renewed Date is updated (REQ-9, US-6.1).</text>
+  <text x="50" y="484" fill="#a19f9d" font-size="11">Blocked customers or missing Renewal Item No. cause individual contracts to be skipped with error detail (EC-6.4, EC-6.5).</text>
+</svg>

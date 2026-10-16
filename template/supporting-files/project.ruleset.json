@@ -1,0 +1,36 @@
+{
+    "name": "Demo Extension Rules",
+    "description": "The code-analysis rules for the demo extension. Add a justification for each rule you change.",
+    "rules": [
+        {
+            "id": "AA0232",
+            "action": "None",
+            "justification": "The FlowField <> of <> should be added to the SIFT key."
+        },
+        {
+            "id": "AS0084",
+            "action": "Hidden",
+            "justification": "The ID range is inside 50000..99999 (per-tenant range), not an AppSource range. AppSourceCop reports it by design."
+        },
+        {
+            "id": "AS0051",
+            "action": "Hidden",
+            "justification": "Marketplace manifest properties (privacyStatement, EULA, help, logo, contextSensitiveHelpUrl) are required for AppSource submission only. This is a per-tenant extension."
+        },
+        {
+            "id": "AS0052",
+            "action": "Hidden",
+            "justification": "The publisher url is an AppSource listing requirement. This is a per-tenant extension."
+        },
+        {
+            "id": "AS0054",
+            "action": "Hidden",
+            "justification": "A mandatory prefix or suffix is an AppSource requirement. A per-tenant extension has no reserved affix."
+        },
+        {
+            "id": "AS0092",
+            "action": "Hidden",
+            "justification": "Application Insights telemetry is not configured for this demo per-tenant extension."
+        }
+    ]
+}

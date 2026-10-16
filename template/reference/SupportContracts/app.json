@@ -1,0 +1,32 @@
+{
+  "id": "8cf43e13-0823-4c26-acb7-acc53026d8c6",
+  "name": "Support Contracts",
+  "publisher": "Default Publisher",
+  "version": "1.0.0.0",
+  "brief": "Support contract management for Business Central.",
+  "description": "Manage customer support contracts with service levels, contact tracking, and automatic renewal invoicing.",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "26.0.0.0",
+  "idRanges": [
+    {
+      "from": 60100,
+      "to": 60149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "15.0",
+  "features": [
+    "NoImplicitWith"
+  ]
+}

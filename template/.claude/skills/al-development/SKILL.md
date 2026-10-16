@@ -1,6 +1,6 @@
 ---
 name: al-development
-description: Build the Business Central extension from the approved PRD in this demo folder — write the AL code, optionally write and run tests, compile with the four analyzers, and publish to the sandbox in app/.vscode/launch.json, end to end without prompts. Use after the PRD is approved and the user chose to begin development (requirements-docs Step 8).
+description: Build the Business Central extension from the approved PRD in this demo folder — write the AL code, optionally write and run tests and write a user guide with screenshots, compile with the four analyzers, and publish to the sandbox in app/.vscode/launch.json, end to end without prompts. Use after the PRD is approved and the user chose to begin development (requirements-docs Step 8).
 ---
 
 # Development: PRD → AL code → build → publish
@@ -9,13 +9,14 @@ This workflow has no git, no AL-Go, and no CI. The main app is in `app/`. The te
 
 ## Inputs from requirements-docs Step 8
 
-Before you start, these three answers are known:
+Before you start, these four answers are known:
 
 | Answer | Effect |
 |--------|--------|
 | Dashboard: yes / no | Yes: `dashboard-builder` tracks the tasks below. No: no dashboard. |
 | Begin development: yes | This skill runs. |
 | Tests: yes / no | Yes: do the steps marked **[Tests]**. No: skip them. |
+| User guide: yes / no | Yes: do Step 8 **[User guide]**. No: skip it. |
 
 ## Run end to end without prompts
 
@@ -124,7 +125,26 @@ Run the build script in PowerShell from the repo root:
 3. If a test fails, find the cause. Fix the app or the test, then build, bump, and publish again, and run the tests again.
 4. If the Microsoft test toolkit is not installed on the environment, the test app does not publish. Record this in the final report and continue with Step 8. Do not try to install the toolkit.
 
-### 8. Final check and report
+### 8. [User guide] Write the user guide with screenshots
+
+Do this step after the app is published (Step 5), so that the screenshots show the real pages.
+
+1. Write `docs/user-guide/<App name> User Guide.md` for the end users of the extension:
+   - A title, then a line with the published version, "Business Central Online", and the month and year.
+   - An **Overview** section: what the extension does, in a short list.
+   - One numbered section for each main task of the PRD features, in feature order. Each section has numbered steps ("Select the search icon, and enter **<page caption>**."), one screenshot or more, and the notes and edge cases that a user sees (the error messages from the PRD, in bold page and field captions).
+   - Use the page, field, and action captions from the AL code. Follow the writing standard in `CLAUDE.md`.
+2. Take the screenshots in the sandbox with the browser tool:
+   - Load the browser tools with ToolSearch: Claude in Chrome (`mcp__claude-in-chrome__*`) or the built-in browser (`mcp__Claude_Browser__*`). Read the skill for that browser first, if one is listed.
+   - Open a new tab at `https://businesscentral.dynamics.com/<tenant>/<environmentName>/`. If a sign-in page opens, ask the user to sign in in the browser, then continue. Do not type a password.
+   - Open each page with the BC search, or add `?page=<page ID>` to the URL. Use the CRONUS demo data.
+   - Take each screenshot with `save_to_disk: true`. Copy the saved file to `docs/user-guide/images/NN-<page-name>.<ext>` (for example `01-support-contracts.png`), and link it in the guide with a relative path.
+   - Limit the browser actions to opening pages, selecting records, opening lookups, and entering values in the new fields of this extension. Do not post documents, delete records, or change setup outside this extension. If a screenshot needs one of those actions, use the wireframe image for it.
+3. If no browser tool is available, or the sandbox does not open, use the wireframe PNG files from `docs/wireframes/` (link them as `../wireframes/<file>.png`). Put this note below the title: "> **Draft.** This guide uses wireframe images. Replace them with sandbox screenshots before you share this guide." If the guide mixes screenshots and wireframes, say which sections use wireframes, and add "(wireframe)" to the alt text of each wireframe image.
+4. Read each image file and look at it. Retake a screenshot that shows a loading page, an error, or the wrong record.
+5. If the dashboard is on, add the guide as a deliverable.
+
+### 9. Final check and report
 
 1. Check that each PRD user story has code, and that each object ID is in the `app/app.json` range.
 2. If the dashboard is on, mark the tasks done and add the final activity entry.
@@ -133,5 +153,6 @@ Run the build script in PowerShell from the repo root:
    - The build result: errors, warnings, and the analyzers that ran
    - The published version and the environment (`environmentName`, tenant)
    - The test results (pass and fail count), or "Tests not requested"
+   - The user guide path and the count of screenshots and wireframe images, or "User guide not requested"
    - The link to open the environment: `https://businesscentral.dynamics.com/<tenant>/<environmentName>`
    - The PRD items that are not done, and each change to the plan

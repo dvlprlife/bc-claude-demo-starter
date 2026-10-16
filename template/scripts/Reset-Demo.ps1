@@ -12,7 +12,7 @@
     Restores app/app.json from supporting-files/app.baseline.json.
 
     Keeps the workflow files: docs/templates, docs/README.md, reference, scripts,
-    supporting-files, .claude, app/.vscode, .mcp.json, CLAUDE.md, README.md, and the symbols
+    supporting-files, .claude, app/.vscode, .mcp.json, CLAUDE.md, and the symbols
     in app/.alpackages.
 
     This script does not remove the extension from the Business Central environment.

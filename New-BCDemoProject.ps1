@@ -120,6 +120,10 @@ if ($CheckOnly) {
 }
 
 if ($IdTo -lt $IdFrom) { throw "IdTo ($IdTo) is less than IdFrom ($IdFrom)." }
+# The test app uses 50150-50199. The main app range must not overlap it.
+if ($IdFrom -le 50199 -and $IdTo -ge 50150) {
+    throw "The object ID range $IdFrom-$IdTo overlaps the test app range 50150-50199. Use a range outside it, for example 50100-50149."
+}
 # The package file name is <Publisher>_<Name>_<Version>.app, so these values must be valid in a file name.
 foreach ($name in 'ProjectName', 'Publisher') {
     if ((Get-Variable $name -ValueOnly) -match '[\\/:*?"<>|]') {

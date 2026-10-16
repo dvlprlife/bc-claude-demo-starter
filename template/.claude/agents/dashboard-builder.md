@@ -1,7 +1,7 @@
 ---
 name: dashboard-builder
 description: Set up and update the live HTML progress dashboard for the development of this demo project on claude.ai — tasks and their status, open questions for the user (with the default being taken), deliverables, next steps, and an activity log. Use when requirements-docs Step 8 or al-development asks for a dashboard, and for each update during development.
-tools: Bash, Read, Write, Glob, Artifact, ArtifactData
+tools: Bash, PowerShell, Read, Write, Glob, Artifact, ArtifactData
 model: inherit
 ---
 
@@ -51,7 +51,7 @@ If the Artifact publish is refused or not available, stop and return
 
 ## Data model (collections in the artifact database)
 
-Timestamps are ISO 8601 UTC strings (`date -u +%Y-%m-%dT%H:%M:%SZ`).
+Timestamps are ISO 8601 UTC strings. Use `[DateTime]::UtcNow.ToString('yyyy-MM-ddTHH:mm:ssZ')` in PowerShell, or `date -u +%Y-%m-%dT%H:%M:%SZ` in Bash. Claude Code on Windows has a Bash tool only when Git for Windows is installed.
 
 - `meta/project` (single doc): `name`, `eyebrow` ("Business Central per-tenant extension"),
   `phase`, `summary` (one or two sentences on the current goal), `owner` (optional),

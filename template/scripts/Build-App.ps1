@@ -28,7 +28,11 @@ param(
 $ErrorActionPreference = 'Stop'
 
 $repo = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
-$projectPath = (Resolve-Path (Join-Path $repo $Project)).Path
+$projectCandidate = Join-Path $repo $Project
+if (-not (Test-Path (Join-Path $projectCandidate 'app.json'))) {
+    throw "The project folder '$Project' was not found, or it has no app.json."
+}
+$projectPath = (Resolve-Path $projectCandidate).Path
 $outFolder = Join-Path $repo '.output'
 $ruleset = Join-Path $repo 'supporting-files\project.ruleset.json'
 New-Item -ItemType Directory -Force $outFolder | Out-Null
@@ -71,8 +75,12 @@ $alcArgs = @(
 )
 
 Write-Host "Compiling $($appJson.name) $($appJson.version)"
+# In Windows PowerShell 5.1, a native command that writes to stderr stops the script when
+# $ErrorActionPreference is 'Stop'. Use 'Continue' for the compiler call, so that the summary runs.
+$ErrorActionPreference = 'Continue'
 $output = & $alc @alcArgs 2>&1 | ForEach-Object { "$_" }
 $exitCode = $LASTEXITCODE
+$ErrorActionPreference = 'Stop'
 $output | Write-Host
 
 $errors = @($output | Where-Object { $_ -match '(^|: )error [A-Z]{2,3}[0-9]' })

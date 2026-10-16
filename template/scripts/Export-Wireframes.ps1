@@ -16,11 +16,14 @@
 #>
 [CmdletBinding()]
 param(
-    [string]$Path = (Join-Path $PSScriptRoot '..\docs\wireframes'),
+    [string]$Path,
     [int]$Scale = 2
 )
 
 $ErrorActionPreference = 'Stop'
+
+# Windows PowerShell 5.1 does not set $PSScriptRoot in parameter defaults, so set the default here.
+if (-not $Path) { $Path = Join-Path $PSScriptRoot '..\docs\wireframes' }
 
 $edge = @(
     "${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe",
@@ -47,12 +50,14 @@ foreach ($svg in $svgFiles) {
     if (Test-Path $png) { Remove-Item $png }
 
     $uri = ([Uri]$svg.FullName).AbsoluteUri
+    # Start-Process joins the arguments with spaces and does not quote them. Quote the paths,
+    # because a path with a space (for example "OneDrive - Contoso") splits the argument.
     $edgeArgs = @(
         '--headless=new', '--disable-gpu', '--hide-scrollbars', '--no-first-run',
-        "--user-data-dir=$profileDir",
+        "--user-data-dir=`"$profileDir`"",
         "--force-device-scale-factor=$Scale",
         "--window-size=$width,$height",
-        "--screenshot=$png",
+        "--screenshot=`"$png`"",
         $uri
     )
     Start-Process -FilePath $edge -ArgumentList $edgeArgs -Wait -WindowStyle Hidden

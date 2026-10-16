@@ -1,6 +1,6 @@
 ---
 name: requirements-docs
-description: Turn a customer request for a Business Central extension into a Functional Requirements Document (FRD) and a Product Requirements Document (PRD) with wireframes, modeled on the Support Contracts reference sample. Use when the user gives a new feature or customization request, asks for an FRD or PRD, asks to revise one, or approves the PRD (Step 8 asks the dashboard, development, and test questions, then hands off to al-development).
+description: Turn a customer request for a Business Central extension into a Functional Requirements Document (FRD) and a Product Requirements Document (PRD) with wireframes, modeled on the Support Contracts reference sample. Use when the user gives a new feature or customization request, asks for an FRD or PRD, asks to revise one, or approves the PRD (Step 8 asks the dashboard, development, test, and user guide questions, then hands off to al-development).
 ---
 
 # Request → FRD → PRD
@@ -104,21 +104,23 @@ When the user approves the PRD (for example "approved", "the PRD is good", or "p
 1. **Dashboard:** "Do you want a progress dashboard for the development of this project?" Options: "Yes — create a dashboard" and "No — continue without one".
    - The dashboard is a claude.ai Artifact. It needs the Artifact and ArtifactData tools. If they are not in this session (check with ToolSearch for `Artifact`), do not ask this question. Tell the user in one line that the dashboard is not available in this session, and use "No".
 2. **Development:** "Do you want to begin development now?" Options: "Yes — build and publish the extension" and "No — stop after the PRD".
-   - If the answer is **No**, stop. If the dashboard answer was Yes, create the dashboard with the development tasks in the "To do" state, so that it is ready. Tell the user to say "begin development" when they are ready. When they say it, ask question 3 and continue.
+   - If the answer is **No**, stop. If the dashboard answer was Yes, create the dashboard with the development tasks in the "To do" state, so that it is ready. Tell the user to say "begin development" when they are ready. When they say it, ask questions 3 and 4 and continue.
 3. **Tests:** ask this question only if the development answer is Yes. "Do you want automated tests created for this extension?" Options: "Yes — create and run tests" and "No — develop without tests".
+4. **User guide:** ask this question only if the development answer is Yes. "Do you want a user guide with screenshots after the extension is published?" Options: "Yes — write a user guide with screenshots" and "No — skip the user guide".
+   - Screenshots of the sandbox need a browser tool: Claude in Chrome (`mcp__claude-in-chrome__*`) or the built-in browser of the Claude desktop app (`mcp__Claude_Browser__*`). Check with ToolSearch. If neither is available, add this to the question: "No browser tool is available in this session, so the guide uses the wireframe images."
 
-After the three answers:
+After the four answers:
 
 1. If the dashboard answer is **Yes**, have the `dashboard-builder` subagent create the dashboard before you write AL code. Give it:
    - The project name (`name` in `app/app.json`) and the PRD file name and version.
    - The current phase: "Development".
-   - The development tasks from the list below. Each task names the PRD feature and the AL objects it covers. Leave out the test tasks if the tests answer is No.
+   - The development tasks from the list below. Each task names the PRD feature and the AL objects it covers. Leave out the test tasks if the tests answer is No, and the user guide task if the user guide answer is No.
    - The open questions from the PRD Open Questions table, each with its default.
    - The publish target: `environmentName` and `environmentType` from `app/.vscode/launch.json`.
    - This statement: "This folder is not under git control. There are no repos, branches, commits, PRs, CI runs, or releases. Leave those fields blank and do not track versions."
 
    Tell the user the dashboard URL once. Continue the same `dashboard-builder` agent with SendMessage for each update. Do not start a new one each time.
-2. Use the `al-development` skill (`.claude/skills/al-development/SKILL.md`) with the three answers. From this point, development runs from end to end without prompts: code, build, publish, and (if requested) tests.
+2. Use the `al-development` skill (`.claude/skills/al-development/SKILL.md`) with the four answers. From this point, development runs from end to end without prompts: code, build, publish, and (if requested) tests and the user guide.
 3. If the dashboard is on, check the `ANSWERS:` line of each dashboard-builder report. When the user answers a question on the page, apply the answer to the code and, if necessary, to the PRD. Do not stop development to wait for an answer.
 
 ### Development tasks from the PRD
@@ -135,7 +137,8 @@ Make the task list in this order. Use the AL Object Summary, the features, and t
 8. Publish to the environment in `app/.vscode/launch.json`
 9. **[Tests]** Test app and test codeunits for the critical paths in the NFR "Testing" row
 10. **[Tests]** Publish the test app and run the tests
-11. Final check: each PRD user story is implemented, and each object ID is in the `app/app.json` range
+11. **[User guide]** User guide with screenshots in `docs/user-guide/`
+12. Final check: each PRD user story is implemented, and each object ID is in the `app/app.json` range
 
 ## Revisions
 

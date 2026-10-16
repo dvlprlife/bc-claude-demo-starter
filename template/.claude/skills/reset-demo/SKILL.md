@@ -38,12 +38,13 @@ Run in PowerShell from the repo root:
 The script removes:
 
 - `docs/request.md`, the FRD and PRD files (all versions), and the files in `docs/wireframes/`
+- the user guide and its images in `docs/user-guide/`
 - the AL source in `app/src/`, the translation files in `app/Translations/`, the test app in `test/`, and the packages in `.output/`
 - the dashboard anchor in `.dashboard/`
 
 It restores `app/app.json` from `supporting-files/app.baseline.json`.
 
-It keeps the workflow: `docs/templates/`, `docs/README.md`, `reference/`, `scripts/`, `supporting-files/`, `.claude/`, `app/.vscode/`, `.mcp.json`, `CLAUDE.md`, `README.md`, and the symbols in `app/.alpackages/`.
+It keeps the workflow: `docs/templates/`, `docs/README.md`, `reference/`, `scripts/`, `supporting-files/`, `.claude/`, `app/.vscode/`, `.mcp.json`, `CLAUDE.md`, and the symbols in `app/.alpackages/`.
 
 ## 4. Report
 

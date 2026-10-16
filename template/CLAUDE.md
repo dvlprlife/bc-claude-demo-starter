@@ -31,6 +31,7 @@ Ask these questions in this order (requirements-docs Step 8):
 1. "Do you want a progress dashboard for the development of this project?" (only if the Artifact tools are available)
 2. "Do you want to begin development now?"
 3. If development is yes: "Do you want automated tests created for this extension?"
+4. If development is yes: "Do you want a user guide with screenshots after the extension is published?"
 
 If the dashboard answer is yes, the project agent `dashboard-builder` (`.claude/agents/dashboard-builder.md`) creates a dashboard of the development tasks. Then the `al-development` skill (`.claude/skills/al-development/SKILL.md`) runs.
 
@@ -38,7 +39,7 @@ These rules replace any global "progress dashboard for long tasks" rule for this
 
 ## Development runs end to end
 
-After the three answers, development goes from the first step to the last without prompts: write the AL code, build, publish, and (if requested) write and run the tests.
+After the four answers, development goes from the first step to the last without prompts: write the AL code, build, publish, and (if requested) write and run the tests and write the user guide.
 
 - The user authorized publishing to the environment in `app/.vscode/launch.json` (`environmentName`, `environmentType`, `tenant`, `schemaUpdateMode`) without a separate approval. This authorization is for that environment only.
 - Build: `./scripts/Build-App.ps1` (main app in `app/`) and `./scripts/Build-App.ps1 -Project test` (test app in `test/`). The script calls `alc.exe` with CodeCop, AppSourceCop, PerTenantExtensionCop, and UICop. Zero errors and no `AL1003` is the gate.

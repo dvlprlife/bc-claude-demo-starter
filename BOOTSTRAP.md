@@ -51,7 +51,7 @@ Ask the user for these values in one message. Show the default for each value. T
 | Sandbox environment name | (none, required) | The name of a Business Central Online **sandbox**, for example `Sandbox`. |
 | Tenant | (none, required) | The Microsoft Entra tenant ID (a GUID) or domain, for example `contoso.onmicrosoft.com`. |
 | BC major version | `28` | The version of the sandbox. Use 28 if the user does not know. The app installs on this version and later versions. |
-| Object ID range | `50100`–`50149` | The test app uses `50150`–`50199`. |
+| Object ID range | `50100`–`50149` | The test app uses `50150`–`50199`. The range must not overlap it. |
 
 Help the user find the values:
 

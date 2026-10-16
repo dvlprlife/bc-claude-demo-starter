@@ -27,6 +27,6 @@ Claude uses the `requirements-docs` skill to make the documents. To make the wir
 1. The FRD comes first. The customer reviews it.
 2. The PRD translates each FRD requirement (REQ-n) and recommendation (R-n) into features, user stories, and edge cases.
 3. The traceability tables at the end of each document link the two.
-4. When you approve the PRD, Claude asks three questions: a dashboard (yes or no), begin development (yes or no), and automated tests (yes or no).
-5. Development then runs without more questions. Claude writes the AL code in `app/src`, builds it, and publishes it to the sandbox in `app/.vscode/launch.json`. If you asked for tests, Claude also writes and runs them.
+4. When you approve the PRD, Claude asks four questions: a dashboard (yes or no), begin development (yes or no), automated tests (yes or no), and a user guide with screenshots (yes or no).
+5. Development then runs without more questions. Claude writes the AL code in `app/src`, builds it, and publishes it to the sandbox in `app/.vscode/launch.json`. If you asked for tests, Claude also writes and runs them. If you asked for a user guide, Claude writes it in `docs/user-guide/` with screenshots from the sandbox.
 6. To run the demo again, say "reset the demo". Claude removes the extension from the sandbox and removes the documents and code from this folder.

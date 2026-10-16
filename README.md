@@ -13,7 +13,7 @@ The latest release is on the [Releases page](https://github.com/dvlprlife/bc-cla
 3. Claude creates a new AL project folder from the kit.
 4. You open Claude Code in the new folder and give it a customer request.
 5. Claude writes the FRD and the PRD, then asks you to approve the PRD.
-6. Claude asks three questions: a progress dashboard, begin development, and automated tests.
+6. Claude asks four questions: a progress dashboard, begin development, automated tests, and a user guide with screenshots.
 7. Claude writes the code, builds it, and publishes it to your sandbox without more questions.
 
 ## Before you start
@@ -35,6 +35,7 @@ Optional items:
 - **Visual Studio Code with the AL Language extension.** Use it to look at the code. Claude does not need it.
 - **Automated tests.** The sandbox needs the Microsoft test framework apps (Test Runner, Any, Library Assert). If they are not installed, Claude tells you and continues without the tests.
 - **Progress dashboard.** It is a page on claude.ai. Claude offers it only when your Claude Code session can publish artifacts.
+- **Screenshots for the user guide.** Claude takes them in your sandbox with a browser tool: the Claude in Chrome extension, or the built-in browser of the Claude desktop app. Without a browser tool, the user guide uses the wireframe images.
 
 Claude checks the prerequisites for you. If the .NET SDK or the AL tools are missing, Claude offers to install them. Claude installs them only when you agree. Windows can show an administrator prompt for the .NET SDK. Approve it. You install Claude Code and Microsoft Edge yourself.
 
@@ -105,10 +106,11 @@ Claude loads the project skills and the AL tools only when Claude Code starts in
 
    > The PRD is approved.
 
-5. Answer the three questions:
+5. Answer the four questions:
    - Do you want a progress dashboard?
    - Do you want to begin development now?
    - Do you want automated tests?
+   - Do you want a user guide with screenshots?
 6. Claude writes the AL code in `app/src/`, builds it with the code analyzers, and publishes it to your sandbox. Claude gives you a report and a link to the sandbox.
 7. Open Business Central and look at the new pages.
 
